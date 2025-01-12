@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Pantry</title>
+     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
+  
   <body>
     <a href="/users/<%= user._id %>/foods/new">Add New Food</a>
+     <a href="/">Go back home</a> 
     <h1>Welcome to my Pantry</h1>
-   
-    
+
     <% if (pantry.length === 0){ %>  
     <P>There are no items in this pantry.</P>
    <% } else {%>
-    <ul>
+    <ul style="width: 50%; margin: 0 auto; text-align: center; list-style: none; padding: 0;">
        <% pantry.forEach((item)=>{%>
-        <li>
+        <li  style="display:flex; justify-content:space-around;">
            <span><%= item.name %> </span>
             <a href="/users/<%= user._id %>/foods/<%= item._id %>/edit">Edit</a>
-           <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE" method="post">
+           <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE" method="post" 
+              style="width: auto; margin: 0; padding: 0; display: inline;">
   
             <button type="'submit">Delete</button>
             </form>
