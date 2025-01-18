@@ -8,10 +8,11 @@
   </head>
   
   <body>
-    <a href="/users/<%= user._id %>/foods/new">Add New Food</a>
-     <a href="/">Go back home</a> 
+     <a href="/" style="padding: 20px; padding-top: 50px;">Go back home</a>
     <h1>Welcome to my Pantry</h1>
-
+   <div style="text-align: center;">
+  <a href="/users/<%= user._id %>/foods/new" style="display: inline-block;">Add New Food</a>
+</div>
     <% if (pantry.length === 0){ %>  
     <P>There are no items in this pantry.</P>
    <% } else {%>
